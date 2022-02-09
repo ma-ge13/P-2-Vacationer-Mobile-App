@@ -4,23 +4,28 @@
  * 
  */
 
-import React from "react";
-import { View, Text } from "react-native";
-import Reservation from "../dtos/reservation-dto";
 
-
-export default function ReservationViewer(props: {reservation:Reservation}){
-    
+ import React, { useState } from "react";
+ import { View, Text } from "react-native";
+ import Reservation from "../dtos/reservation-dto";
+ 
+ 
+ //child of log in view from information flow perspective
+     export default function ReservationViewer({route}){  
   
-
-
-    return(
-    <View>
-        <Text>Welcome {props.reservation.owner}!</Text>
-        <Text>Check In: {props.reservation.checkIn}</Text>
-        <Text>Check Out: {props.reservation.checkOut}</Text>
-        <Text>Room: {props.reservation.room}</Text>
-
-    </View>)
-
-}
+         const {jsonString} = route.params;
+         const tempRes:Reservation =  JSON.parse(jsonString);
+ 
+         const [reservation, setReservation] = useState<Reservation>(tempRes);
+ 
+ 
+ 
+     return(
+     <View>  
+      <Text>Welcome {reservation.owner}!</Text>
+         <Text>Check In: {reservation.checkIn} </Text>
+         <Text>Check Out: {reservation.checkOut} </Text>
+         <Text>Room: {reservation.room} </Text>
+     </View>)
+ 
+ }//end of ReservationViewer
