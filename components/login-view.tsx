@@ -18,7 +18,7 @@ export default function LoginView({navigation}){
     const [resId, setResId] = useState("");
   
     
-    
+
 
     /** 
     if reservation exists, load reservation information
@@ -48,8 +48,7 @@ export default function LoginView({navigation}){
     }
 
    
-    return(
-    
+    return(    
         <View>
             <Text>Welcome to Paradise Villas log in</Text>
             <TextInput onChangeText={setResId} placeholder="Reservation ID"/>
@@ -57,6 +56,5 @@ export default function LoginView({navigation}){
         </View>
     
     )
-
 
 }
