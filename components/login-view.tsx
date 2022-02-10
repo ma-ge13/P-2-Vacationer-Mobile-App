@@ -9,42 +9,29 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 
-export default function LoginView({navigation}){
-
-    
-
-
+export default function LoginView({ navigation }) {
     
     const [resId, setResId] = useState("");
   
-    
-
-
     /** 
     if reservation exists, load reservation information
     to view: check-in, check-out, room
     else return reservation not found page to view
     */
-    async function loadReservation(){
-
+    async function loadReservation() {
+        
         try {
             const response = await axios.get(`https://6894f2cd-bb6a-4979-8499-21dcd8a06fd1.mock.pstmn.io/reservations/${resId}`)
             const grabbedRes:Reservation = response.data;
             const jsonString = JSON.stringify(grabbedRes);
             await AsyncStorage.setItem('@reservation', jsonString);
             
-            
             //setReservation(grabbedRes);
-           navigation.navigate('ReservationViewer', {jsonString});
-
-
-
-
+            navigation.navigate('ReservationViewer', { jsonString });
         } catch (error) {
             console.log(error);
             Alert.alert("Reservation not found. Please check entry and try again.");
         }
-
     }
 
    
@@ -54,7 +41,5 @@ export default function LoginView({navigation}){
             <TextInput onChangeText={setResId} placeholder="Reservation ID"/>
             <Button onPress={loadReservation} title="Submit Reservation Id" />
         </View>
-    
     )
-
 }

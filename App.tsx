@@ -5,6 +5,7 @@ import ReservationViewer from './components/reservation-view';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import ReportProblem from './components/report-problem';
 
 
 
@@ -31,14 +32,14 @@ console.log(reservation);
 
 
 
-return(
-  
-      <NavigationContainer>
-        <Drawer.Navigator initialRouteName="LoginViewer">
-          <Drawer.Screen name="LoginViewer" component={LoginView} />
-          <Drawer.Screen name="ReservationViewer" component={ReservationViewer} />
-        </Drawer.Navigator>
-      </NavigationContainer>
+  return (
+    <NavigationContainer>
+      <Drawer.Navigator initialRouteName="LoginViewer">
+        <Drawer.Screen name="LoginViewer" component={LoginView} />
+        <Drawer.Screen name="ReservationViewer" component={ReservationViewer} />
+        <Drawer.Screen name='Report a problem' component={ReportProblem} />
+      </Drawer.Navigator>
+    </NavigationContainer>
   )
 }//end of App
 
