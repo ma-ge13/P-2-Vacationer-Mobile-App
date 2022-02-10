@@ -7,10 +7,8 @@ import {
   View,
   StyleSheet,
   Pressable,
-  Modal,
-  Alert,
 } from 'react-native';
-import { Activity, backendAddress } from '../dtos/activity';
+import { Activity, backendAddress } from '../../dtos/activity';
 import ActivityModal from './activity-modal';
 
 export default function ActivityView() {

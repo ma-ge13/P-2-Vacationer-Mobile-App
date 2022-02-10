@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet } from 'react-native';
-import LoginView from './components/login-view';
-import ReservationViewer from './components/reservation-view';
+import LoginView from './components/login/login-view';
+import ReservationViewer from './components/reservation/reservation-view';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import ReportProblem from './components/report-problem';
+import ReportProblem from './components/problem/report-problem';
+import ActivityView from './components/activity/activity-view';
 
 
 
@@ -34,13 +35,14 @@ console.log(reservation);
 
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="LoginViewer">
-        <Drawer.Screen name="LoginViewer" component={LoginView} />
-        <Drawer.Screen name="ReservationViewer" component={ReservationViewer} />
-        <Drawer.Screen name='Report a problem' component={ReportProblem} />
+      <Drawer.Navigator initialRouteName="Login">
+        <Drawer.Screen name="Login" component={LoginView} />
+        <Drawer.Screen name="Reservation" component={ReservationViewer} />
+        <Drawer.Screen name="Activities" component={ActivityView} />
+        <Drawer.Screen name="Report a problem" component={ReportProblem} />
       </Drawer.Navigator>
     </NavigationContainer>
-  )
+  );
 }//end of App
 
 

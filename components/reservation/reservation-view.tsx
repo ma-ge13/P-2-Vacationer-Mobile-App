@@ -6,7 +6,7 @@
 
  import React, { useState } from "react";
  import { View, Text } from "react-native";
- import Reservation from "../dtos/reservation-dto";
+ import Reservation from "../../dtos/reservation";
  
  
 //child of log in view from information flow perspective

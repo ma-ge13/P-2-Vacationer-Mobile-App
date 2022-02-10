@@ -1,5 +1,5 @@
 import { View, Text, TextInput, Button, Alert } from "react-native";
-import Reservation from "../dtos/reservation-dto";
+import Reservation from "../../dtos/reservation";
 import { useState } from "react";
 import React from "react";
 import axios from "axios";
@@ -27,7 +27,7 @@ export default function LoginView({ navigation }) {
             await AsyncStorage.setItem('@reservation', jsonString);
             
             //setReservation(grabbedRes);
-            navigation.navigate('ReservationViewer', { jsonString });
+            navigation.navigate('Reservation', { jsonString });
         } catch (error) {
             console.log(error);
             Alert.alert("Reservation not found. Please check entry and try again.");
