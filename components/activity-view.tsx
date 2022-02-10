@@ -14,26 +14,7 @@ import { Activity, backendAddress } from '../dtos/activity';
 import ActivityModal from './activity-modal';
 
 export default function ActivityView() {
-  // const activities: Activity[] = [
-  //   {
-  //     id: '101',
-  //     title: 'Mini Golf',
-  //     desc: '9 rounds at our mini golf course',
-  //     startTime: 1644012548,
-  //     endTime: 1643998146,
-  //     location: 'Mini Golf Course',
-  //     status: 'On Schedule',
-  //   },
-  //   {
-  //     id: '202',
-  //     title: 'Casino Night',
-  //     desc: 'Blackjack and Poker until 2am',
-  //     startTime: 1644012000,
-  //     endTime: 1644026400,
-  //     location: 'Casino',
-  //     status: 'On Schedule',
-  //   },
-  // ];
+  
   const [activities, setActivities] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
   const [modalDetails, setModalDetails] = useState({});
