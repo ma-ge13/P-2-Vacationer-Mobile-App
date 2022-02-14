@@ -7,6 +7,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import ReportProblem from './components/problem/report-problem';
 import ActivityView from './components/activity/activity-view';
+import ShowOfferings from './components/room-service/show-food';
 
 
 export default function App() {
@@ -32,6 +33,7 @@ export default function App() {
         <Drawer.Screen name="Login" component={LoginView} />
         <Drawer.Screen name="Reservation" component={ReservationViewer} />
         <Drawer.Screen name="Activities" component={ActivityView} />
+        <Drawer.Screen name="Room Service" component={ShowOfferings} />
         <Drawer.Screen name="Report a problem" component={ReportProblem} />
       </Drawer.Navigator>
     </NavigationContainer>
