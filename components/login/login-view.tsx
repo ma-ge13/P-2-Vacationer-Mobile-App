@@ -6,9 +6,6 @@ import axios from "axios";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
-
-
-
 export default function LoginView({ navigation }) {
     
     const [resId, setResId] = useState("");
@@ -33,7 +30,6 @@ export default function LoginView({ navigation }) {
             Alert.alert("Reservation not found. Please check entry and try again.");
         }
     }
-
    
     return(    
         <View>
