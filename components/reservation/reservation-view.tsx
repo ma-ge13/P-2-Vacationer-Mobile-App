@@ -15,7 +15,7 @@ export default function ReservationViewer({ route }) {
     const {jsonString} = route.params;
     const tempRes:Reservation =  JSON.parse(jsonString);
 
-    const [reservation, setReservation] = useState<Reservation>(tempRes); 
+    const [reservation] = useState<Reservation>(tempRes); 
  
     return (
         <View>  

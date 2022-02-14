@@ -1,5 +1,5 @@
 
-export const endpoint = "http://52.146.51.210:3000/";
+export const endpoint = "http://20.75.160.73:3000";
 
 export default interface CheckAPI{
 

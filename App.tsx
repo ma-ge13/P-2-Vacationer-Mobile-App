@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { StyleSheet } from 'react-native';
 import LoginView from './components/login/login-view';
 import ReservationViewer from './components/reservation/reservation-view';
@@ -9,29 +9,22 @@ import ReportProblem from './components/problem/report-problem';
 import ActivityView from './components/activity/activity-view';
 
 
-
 export default function App() {
-const Drawer = createDrawerNavigator();
 
-let answer
-async function getData() {
-  try {
-    const jsonValue = await AsyncStorage.getItem('@reservation')
-    answer = jsonValue != null ?JSON.parse(jsonValue):null;
-    console.log(answer);
-  } catch(e) {
-    console.log(e);
+  const Drawer = createDrawerNavigator();
+  // let answer;
+  
+  async function getData() {
+    try {
+      const jsonValue = await AsyncStorage.getItem('@reservation')
+      // answer = jsonValue != null ? JSON.parse(jsonValue) : null;
+      // console.log(answer);
+    } catch(e) {
+      console.log(e);
+    }
   }
-}
 
-useEffect(()=>{getData()},[]);
-
-
-const [reservation, setReservation] = useState();
-
-console.log(reservation);
-
-
+  useEffect(()=>{getData()},[]);
 
   return (
     <NavigationContainer>
